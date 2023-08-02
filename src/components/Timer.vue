@@ -52,7 +52,7 @@ watch(
 )
 
 if (window.Worker) {
-  worker = new Worker('/src/script/worker.ts')
+  worker = new Worker(new URL('../script/worker.js', import.meta.url))
   worker.onmessage = (e) => {
     if (e.data.type === 'second') {
       if (totalSeconds.value === 0) {

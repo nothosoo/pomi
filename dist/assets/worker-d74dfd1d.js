@@ -1,0 +1,1 @@
+(function(){"use strict";onmessage=t=>{var a=!1;if(t.data.action==="start"){if(a)return;const e=setInterval(()=>{postMessage({type:"second"})},1e3);postMessage({type:"started",interval:e}),a=!0}else t.data.action==="stop"&&(a=!1,clearInterval(t.data.interval))}})();
