@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { nextTick, ref } from 'vue'
+import SocialLinks from '@/components/SocialLinks.vue'
 import Controls from '@/components/Controls.vue'
 import PCount from '@/components/PCount.vue'
 import ModeSelector, { type Mode } from '@/components/ModeSelector.vue'
@@ -46,5 +47,6 @@ function onEnd() {
     <Timer :minutes="mode.minutes" :action="action" @end="onEnd" />
     <Controls @start="setAction('start')" @stop="setAction('stop')" @reset="setAction('reset')" />
     <PCount :count="pomodoroCount" />
+    <SocialLinks />
   </main>
 </template>
